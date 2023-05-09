@@ -29,7 +29,7 @@ public class metodo_archivos {
     }
     
     metodo_archivos() {
-        throw new UnsupportedOperationException("No es compatible"); 
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public int menu() {
