@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package archivos;
+package com.mycompany.archivo;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,24 +11,20 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-/**
- *
- * @author Usuario PC
- */
-public class metodo_archivos {
+public class metodo_archivo {
 
     Scanner entrada;
     File archivo = new File("miArchivo.txt");
     int contador;
 
-    public metodo_archivos(int contador) {
+    public metodo_archivo(int contador) {
         this.entrada = new Scanner(System.in);
         //traer una variable desde otra clase
         this.contador = contador;
 
     }
-    
-    metodo_archivos() {
+
+    metodo_archivo() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -102,3 +98,4 @@ public class metodo_archivos {
 
     }
 }
+

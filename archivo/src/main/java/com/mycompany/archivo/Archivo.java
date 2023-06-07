@@ -1,17 +1,17 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-package archivos;
+package com.mycompany.archivo;
 
 /**
  *
  * @author Usuario PC
  */
-public class Archivos {
+public class Archivo {
 
     public static void main(String[] args) {
 
-        metodo_archivos obj = new metodo_archivos();
+        metodo_archivo obj = new metodo_archivo();
         int opc;
         do {
             opc = obj.menu();
@@ -27,4 +27,4 @@ public class Archivos {
             }
         } while (opc != 0);
     }
-    }
+}

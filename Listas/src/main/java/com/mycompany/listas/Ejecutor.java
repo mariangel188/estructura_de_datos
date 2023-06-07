@@ -1,14 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-package com.mycompany.metodos;
 
-/**
- *
- * @author SALA H
- */
+package com.mycompany.listas;
+
 public class Ejecutor {
     public static void main(String[] args) {
         int op;
