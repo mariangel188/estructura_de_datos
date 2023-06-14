@@ -10,7 +10,7 @@ class Metodos {
 
     Nodo head;
     Scanner entrada;
-    
+
     public Metodos() {
         this.head = null;
         this.entrada = new Scanner(System.in);
@@ -27,12 +27,12 @@ class Metodos {
         System.out.println("Salir           [0]:");
         return entrada.nextInt();
     }
-    
-    public boolean listaVacia(){
+
+    public boolean listaVacia() {
         return (head == null);
     }
-    
-    public Nodo leerDatos(){
+
+    public Nodo leerDatos() {
         int id;
         String nombre;
         char sexo;
@@ -43,29 +43,78 @@ class Metodos {
         System.out.println("Ingrese nombre: ");
         nombre = entrada.nextLine();
         System.out.println("Ingrsee sexo: ");
-        sexo = entrada.nextLine().charAt(id);
+        sexo = entrada.nextLine().charAt(0);
         for (int i = 0; i < 3; i++) {
             System.out.println("Ingrese la calificacion" + i + " : ");
             calif[i] = entrada.nextFloat();
         }
-        Nodo nuevo = new Nodo(id, nombre, sexo, calif,head);
+        Nodo nuevo = new Nodo(id, nombre, sexo, calif, head);
         return nuevo;
     }
-    
-    public void insertar(){
+
+    public void insertar() {
         Nodo nuevo = leerDatos();
-        if(listaVacia()){
+        if (listaVacia()) {
             head = nuevo;
         } else {
-            if(nuevo.id < head.id){
+            if (nuevo.id < head.id) {
                 nuevo.sig = head;
                 head = nuevo;
-            } else{
+            } else {
                 Nodo actual = head;
-                while(actual.sig != null && nuevo.id > actual.sig.id){
+                while (actual.sig != null && nuevo.id > actual.sig.id) {
                     actual = actual.sig;
                     nuevo.sig = actual.sig;
                     actual.sig = nuevo;
+                }
+            }
+        }
+    }
+
+    public void listar() {
+        if (listaVacia()) {
+            System.out.println("No existen elementos");
+        } else {
+            Nodo actual = head;
+            while (actual != null) {
+                System.out.println("Id: " + actual.id + "\nNombre: " + actual.nombre + "\n");
+                actual = actual.sig;
+            }
+        }
+    }
+
+    public void reporte(char x) {
+        Nodo actual = head;
+        while (actual != null) {
+            if (actual.sexo == x) {
+                if (actual.getProm() >= 7) {
+                    System.out.println("El estudiante " + actual.nombre + " esta aprobado");
+                } else {
+                    System.out.println("El estudiante " + actual.nombre + " esta reprobado");
+                }
+                actual = actual.sig;
+            }
+        }
+    }
+
+    public void eliminar() {
+        int id;
+        System.out.println("Ingrese el id del estudiante a eliminar: ");
+        id = entrada.nextInt();
+        if (listaVacia()) {
+            System.out.println("No hay nada que eliminar");
+        } else {
+            if (id == head.id) {
+                head = head.sig;
+            } else {
+                Nodo actual = head;
+                while (actual.sig != null && actual.sig.id != id) {
+                    actual = actual.sig;
+                    if (actual.sig == null) {
+                        System.out.println("El estudiante no existe");
+                    } else {
+                        actual.sig = actual.sig.sig;
+                    }
                 }
             }
         }

@@ -19,6 +19,6 @@ public class EnlazadaCompleto {
                 case 5: obj.listar();
 
             }
-        } while (true);
+        } while (op != 0);
     }
 }
