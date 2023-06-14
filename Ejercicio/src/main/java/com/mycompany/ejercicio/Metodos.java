@@ -11,7 +11,7 @@ class Metodos {
     Nodo head;
     Scanner entrada;
     
-    public Metodos(Nodo head, Scanner entrada) {
+    public Metodos() {
         this.head = null;
         this.entrada = new Scanner(System.in);
     }
@@ -43,12 +43,12 @@ class Metodos {
         System.out.println("Ingrese nombre: ");
         nombre = entrada.nextLine();
         System.out.println("Ingrsee sexo: ");
-        sexo = entrada.nextLine().charAt(0);
+        sexo = entrada.nextLine().charAt(id);
         for (int i = 0; i < 3; i++) {
             System.out.println("Ingrese la calificacion" + i + " : ");
             calif[i] = entrada.nextFloat();
         }
-        Nodo nuevo = new Nodo(Id, nombre, sexo, calif);
+        Nodo nuevo = new Nodo(id, nombre, sexo, calif,head);
         return nuevo;
     }
     
@@ -57,12 +57,12 @@ class Metodos {
         if(listaVacia()){
             head = nuevo;
         } else {
-            if(nuevo.Id < head.Id){
+            if(nuevo.id < head.id){
                 nuevo.sig = head;
                 head = nuevo;
             } else{
                 Nodo actual = head;
-                while(actual.sig != null && nuevo.Id > actual.sig.Id){
+                while(actual.sig != null && nuevo.id > actual.sig.id){
                     actual = actual.sig;
                     nuevo.sig = actual.sig;
                     actual.sig = nuevo;

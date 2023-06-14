@@ -5,23 +5,13 @@
 package com.mycompany.ejercicio;
 
 public class Persona {
-    int Id;
+    int id;
     String nombre;
     char sexo;
     
-    public Persona(int Id, String nombre, char sexo){
-        this.Id = Id;
+    public Persona(int id, String nombre, char sexo){
+        this.id = id;
         this.nombre = nombre;
         this.sexo = sexo;
     }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int Id) {
-        this.Id = Id;
-    }
-    
-    
 }
