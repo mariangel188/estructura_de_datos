@@ -15,9 +15,9 @@ class Metodos {
         this.head = null;
         this.entrada = new Scanner(System.in);
     }
-
     
-
+    
+    
     public int menu() {
         System.out.println("Insertar        [1]:");
         System.out.println("Eliminar        [2]:");
@@ -42,7 +42,7 @@ class Metodos {
         entrada.nextLine();
         System.out.println("Ingrese nombre: ");
         nombre = entrada.nextLine();
-        System.out.println("Ingrsee sexo: ");
+        System.out.println("Ingrese sexo: ");
         sexo = entrada.nextLine().charAt(0);
         for (int i = 0; i < 3; i++) {
             System.out.println("Ingrese la calificacion" + i + " : ");
@@ -99,7 +99,7 @@ class Metodos {
 
     public void eliminar() {
         int id;
-        System.out.println("Ingrese el id del estudiante a eliminar: ");
+        System.out.println("Ingrese el Id del estudiante a eliminar: ");
         id = entrada.nextInt();
         if (listaVacia()) {
             System.out.println("No hay nada que eliminar");
